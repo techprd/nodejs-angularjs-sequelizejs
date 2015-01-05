@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app>
+<% include header %>
+<body>
+	<% include navbar %>
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Todo</h1>
+			<div ng-controller="TodoCtrl">
+				<span>{{remaining()}} of {{todos.length}} remaining</span> [ <a
+					href="" ng-click="archive()">archive</a> ]
+				<ul class="unstyled">
+					<li ng-repeat="todo in todos"><input type="checkbox"
+						ng-model="todo.done"> <span class="done-{{todo.done}}">{{todo.text}}</span>
+					</li>
+				</ul>
+				<form ng-submit="addTodo()">
+					<div class="col-lg-6">
+						<div class="input-group input-group-lg">
+							<input class="form-control" type="text" ng-model="todoText"
+								size="30" placeholder="add new todo here"> <span
+								class="input-group-btn">
+								<button class="btn btn-primary btn-lg" type="submit">Add</button>
+							</span>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<hr>
+
+		<% include footer %>
+	</div>
+	<!-- /container -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#home').addClass("active");
+		});
+	</script>
+</body>
+</html>
