@@ -4,8 +4,7 @@ How to Connecting your Angular JS app with PostgreSQL or MySQL
 
 ## Usage
 
-$ npm install sequelize
-$ npm install pg
+$ npm install sequelize pg mysql
  
 ## run the app
 $node app.js
